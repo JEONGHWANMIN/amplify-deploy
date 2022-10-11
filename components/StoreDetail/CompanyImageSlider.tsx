@@ -1,4 +1,6 @@
-import React, {useEffect} from 'react'
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
+import React from 'react'
 import LightGallery from 'lightgallery/react'
 import styled from 'styled-components'
 import lgZoom from 'lightgallery/plugins/zoom'
@@ -24,6 +26,7 @@ const CompanyImageSlider = ({postImg, companyName, companyAddress}: Props) => {
         onInit={onInit}
         plugins={[lgZoom, lgThumbnail, lgShare, lgRotate, lgFullscreen]}
         mode="lg-fade"
+        licenseKey={process.env.NEXT_PUBLIC_LIGHT_GALLERY_KEY}
       >
         {postImg?.map((img, index) => {
           return (
