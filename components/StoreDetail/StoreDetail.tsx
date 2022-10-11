@@ -574,7 +574,6 @@ const StoreDetail = ({postId}: {postId: number}) => {
           <CompanyReservationBottom></CompanyReservationBottom>
         </CompanyReservation>
       </CompanyInfoBottom>
-      <Footer />
     </CompanyDetailContainer>
   )
 }
