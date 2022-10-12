@@ -41,7 +41,7 @@ function ConfirmCard({dogInfo, id}: Props) {
             <DogWeight>{dogInfo.weight}kg</DogWeight>
           </div>
         </DogInfoBox>
-        <DogBreed>불독</DogBreed>
+        <DogBreed>{dogInfo.type}</DogBreed>
       </ImageTextBox>
       <DogBottomInfoBox>
         <InfoBox>
