@@ -216,7 +216,6 @@ const Book = () => {
           </BookingConfirmRightContainer>
         </BookingConfirmRight>
       </BookingConfirmContainer>
-      <Footer />
     </BookingConfirm>
   )
 }
