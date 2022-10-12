@@ -1,4 +1,5 @@
 export const toLocalScale = (num: number) => {
+  if (num === null) return '30,000'
   return num.toLocaleString('ko-KR')
 }
 
