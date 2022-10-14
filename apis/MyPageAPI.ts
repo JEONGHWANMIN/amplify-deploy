@@ -11,6 +11,20 @@ const authInstance = axios.create({
   },
 })
 
+authInstance.interceptors.request.use(
+  (config) => {
+    if (!config.headers) config.headers = {}
+    const token = LocalStorage.getItem('accessToken')
+    if (token) {
+      config.headers.Authorization = 'Bearer ' + token // for Spring Boot back-end
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
+
 const getMyPage = async () => {
   try {
     const result = await authInstance.get<Mypage>(`/v1/customer/profile`)

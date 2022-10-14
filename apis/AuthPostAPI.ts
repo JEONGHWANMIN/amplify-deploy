@@ -7,10 +7,21 @@ import {CEO} from '@/types/post'
 const authInstance = axios.create({
   baseURL: SERVER_URL,
   timeout: 1000,
-  headers: {
-    Authorization: `Bearer ${LocalStorage.getItem('accessToken')}`,
-  },
 })
+
+authInstance.interceptors.request.use(
+  (config) => {
+    if (!config.headers) config.headers = {}
+    const token = LocalStorage.getItem('accessToken')
+    if (token) {
+      config.headers.Authorization = 'Bearer ' + token // for Spring Boot back-end
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
 
 const authImageInstance = axios.create({
   baseURL: SERVER_URL,

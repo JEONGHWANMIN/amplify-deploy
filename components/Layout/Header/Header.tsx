@@ -150,7 +150,7 @@ const Header = () => {
                   logOut()
                   LocalStorage.removeItem('accessToken')
                   LocalStorage.removeItem('userInfo')
-                  window.location.replace('/')
+                  // window.location.replace('/')
                 }}
               >
                 로그아웃
@@ -197,7 +197,7 @@ const Header = () => {
                   logOut()
                   LocalStorage.removeItem('accessToken')
                   LocalStorage.removeItem('userInfo')
-                  window.location.replace('/')
+                  // window.location.replace('/')
                 }}
               >
                 로그아웃

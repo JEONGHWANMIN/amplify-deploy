@@ -7,10 +7,21 @@ import {ConfirmBooking} from '@/types/book'
 const bookingAPI = axios.create({
   baseURL: SERVER_URL,
   timeout: 5000,
-  headers: {
-    Authorization: `Bearer ${LocalStorage.getItem('accessToken')}`,
-  },
 })
+
+bookingAPI.interceptors.request.use(
+  (config) => {
+    if (!config.headers) config.headers = {}
+    const token = LocalStorage.getItem('accessToken')
+    if (token) {
+      config.headers.Authorization = 'Bearer ' + token // for Spring Boot back-end
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
 
 const postBookingWish = async (postId: number, WriteForm: IPostBookingWish) => {
   try {

@@ -10,6 +10,20 @@ const authInstance = axios.create({
   },
 })
 
+authInstance.interceptors.request.use(
+  (config) => {
+    if (!config.headers) config.headers = {}
+    const token = LocalStorage.getItem('accessToken')
+    if (token) {
+      config.headers.Authorization = 'Bearer ' + token // for Spring Boot back-end
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
+
 const getCeoPage = async () => {
   try {
     const result = await authInstance.get<Ceo>(`/v1/company/profile?page=1&size=100`)

@@ -7,9 +7,22 @@ const authInstance = axios.create({
   baseURL: SERVER_URL,
   headers: {
     'Content-Type': 'multipart/form-data',
-    Authorization: `Bearer ${LocalStorage.getItem('accessToken')}`,
   },
 })
+
+authInstance.interceptors.request.use(
+  (config) => {
+    if (!config.headers) config.headers = {}
+    const token = LocalStorage.getItem('accessToken')
+    if (token) {
+      config.headers.Authorization = 'Bearer ' + token // for Spring Boot back-end
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
 
 const createReview = async (form: any) => {
   try {
