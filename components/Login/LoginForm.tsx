@@ -115,7 +115,7 @@ const LoginForm = () => {
 
     if (mode === '견주님') {
       const [result, userInfo] = await authService.Login({
-        email: 'test12345@gmail.com',
+        email: 'test12345@test.com',
         password: 'test1234!',
       })
       setIsLogin(userInfo)
