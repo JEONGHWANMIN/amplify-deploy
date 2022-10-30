@@ -12,7 +12,7 @@ interface Props {
 function ReservationCard({reservation}: Props) {
   return (
     <Contaienr>
-      <CardImage mode="post" imgUrl={reservation.url}></CardImage>
+      <CardImage mode="post" imgUrl={reservation.url} height={'260px'}></CardImage>
       <Title>{reservation.title}</Title>
       <Content>
         <Price>{toLocalScale(reservation.roomPrice)}원 / 1박</Price>
