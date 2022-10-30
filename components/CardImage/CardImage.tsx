@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -20,11 +21,12 @@ const modeOptions = {
   },
 }
 
-function CardImage({imgUrl, mode}: Props) {
+function CardImage({imgUrl, mode, height}: Props) {
   const option = modeOptions[mode]
   return (
     <CardBox borderRadius={option.borderRadius}>
-      <img src={imgUrl} />
+      <Image src={imgUrl} width={'300px'} height={height ? height : '230px'} objectFit="cover" />
+      {/* <img src={imgUrl} /> */}
     </CardBox>
   )
 }
