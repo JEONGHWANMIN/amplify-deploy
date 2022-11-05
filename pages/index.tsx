@@ -184,6 +184,11 @@ const PostCardBox = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+
+  @media (max-width: 600px) {
+    gap: 10px;
+    justify-content: center;
+  }
 `
 
 const SubBanner = styled.div`
