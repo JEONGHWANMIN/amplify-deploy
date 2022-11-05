@@ -14,7 +14,7 @@ interface Props {
 
 function PostCard({post}: Props) {
   const router = useRouter()
-  // const address = `${post.address[0].split(' ')[0]} ${post.address[0].split(' ')[1]}`
+
   return (
     <Container onClick={() => router.push(`/detail/${post.id}`)}>
       <ImgBox>
@@ -52,8 +52,13 @@ const Container = styled.div`
   }
 
   @media (max-width: 500px) {
-    width: 170px;
+    width: 200px;
     font-size: 10px;
+  }
+
+  @media (max-width: 400px) {
+    width: 170px;
+    font-size: 8px;
   }
 `
 
