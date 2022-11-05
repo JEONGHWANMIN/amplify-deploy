@@ -26,7 +26,6 @@ function CardImage({imgUrl, mode, height}: Props) {
   return (
     <CardBox borderRadius={option.borderRadius}>
       <Image src={imgUrl} width={'300px'} height={height ? height : '230px'} objectFit="cover" />
-      {/* <img src={imgUrl} /> */}
     </CardBox>
   )
 }
@@ -35,7 +34,6 @@ export default CardImage
 
 const CardBox = styled.div<{borderRadius: string; height?: string}>`
   width: 100%;
-  height: 230px;
 
   img {
     object-fit: cover;

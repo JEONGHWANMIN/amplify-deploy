@@ -42,31 +42,24 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 300px;
-  height: 400px;
   font-size: 20px;
   cursor: pointer;
   border-radius: 20px;
 
   @media (max-width: 768px) {
     width: 245px;
-    height: 360px;
     font-size: 15px;
   }
 
   @media (max-width: 500px) {
     width: 170px;
-    height: 280px;
     font-size: 10px;
   }
 `
 
-const Content = styled.div`
-  padding-left: 5px;
-`
+const Content = styled.div``
 
-const ImgBox = styled.div`
-  height: 60%;
-`
+const ImgBox = styled.div``
 
 const Location = styled.div`
   display: flex;
