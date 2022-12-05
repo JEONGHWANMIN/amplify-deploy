@@ -17,6 +17,9 @@
 
 <br>
 
+## 🌟 프로젝트 시연 영상 바로보기
+[시연영상](https://www.youtube.com/watch?v=5PUuhUXRnJs)
+
 ## 🌟 FE 기술 스택
 
 <div align="left" style="display:flex;">
